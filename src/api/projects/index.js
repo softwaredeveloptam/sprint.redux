@@ -1,9 +1,21 @@
 const router = require("express").Router();
 const builds = require("./builds");
+const store = require("../../../redux/redux"); 
 
 router.get("/", (req, res) => {
+
+  console.log(req.params, "this is req");
+  // store();
   // TODO retrieve and send all projects
-  res.status(418).json({ message: "Not Implemented" });
+  // we need test with container ?? something the state and return back something
+
+  /*
+    get a request ? for something? dispatch???????????
+  */
+  store.dispatch({type: "GET"})
+  res.send(req.params);
+
+  //res.status(418).json({ message: "Not Implemented" });
 });
 
 router.post("/", (req, res) => {
